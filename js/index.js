@@ -4,6 +4,7 @@ const canvas = document.querySelector(".game__display");
 const timerElem = document.querySelector(".timer");
 const scoreElem = document.querySelector(".score");
 const ctx = canvas.getContext("2d");
+const initialTime = performance.now();
 let width = window.innerWidth;
 let height = window.innerHeight;
 let keys = [];
@@ -109,7 +110,7 @@ class Enemy {
 		}
 
 		if (this.y+this.h > player.y && this.y < player.y+player.h && this.x+this.w > player.x && this.x < player.x+player.w) {
-			die(score, (performance.now()/1e3).toFixed(2));
+			die(score, ((performance.now()-initialTime)/1e3).toFixed(2));
 		}
 
 		ctx.fillStyle = this.c;
@@ -142,7 +143,7 @@ function draw() {
 	enemies.forEach(value => {
 		value.draw();
 	});
-	timerElem.innerHTML = (performance.now()/1e3).toFixed(2);
+	timerElem.innerHTML = ((performance.now()-initialTime)/1e3).toFixed(2);
 	scoreElem.innerHTML = score;
 
 	requestAnimationFrame(draw);
