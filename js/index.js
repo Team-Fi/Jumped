@@ -50,20 +50,21 @@ document.addEventListener("keydown", onKeyDown);
 document.addEventListener("keyup", onKeyUp);
 
 class Player {
-	constructor(x, y, w, h, c, minX, maxX) {
+	constructor(x, y, w, h, c, minX) {
 		this.x = x;
 		this.y = y;
 		this.w = w;
 		this.h = h;
 		this.c = c;
 		this.minX = minX;
-		this.maxX = maxX;
+		this.maxX = width/2-50;
 		this.a = 0;
 	}
 
 	draw() {
 		this.ch = height;
 		this.maxY = this.ch-this.h;
+		this.maxX = width/2-50;
 
 		this.a++;
 		this.y += this.a;
@@ -118,7 +119,7 @@ class Enemy {
 	}
 }
 
-const player = new Player(100, height-50, 50, 50, "blue", 0, width/2-50);
+const player = new Player(100, height-50, 50, 50, "blue", 0);
 
 const enemyGenInterval = setInterval(() => {
 	var w = randomIntFromInterval(10, 100);
