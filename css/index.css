@@ -1,0 +1,36 @@
+@font-face {
+	font-family: "DCMA_sans_serif_regular";
+	src: url("../fonts/dmcasansserif-v0900-400.woff2") format("woff2"),
+		url("../fonts/dmcasansserif-v0900-400.woff") format("woff");
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+body {
+	display: flex;
+}
+
+p {
+	position: absolute;
+	top: 10px;
+	font-size: xx-large;
+	text-align: center;
+	left: 0;
+	right: 0;
+	font-family: sans-serif;
+}
+
+.score, .timer {
+	font-family: "DCMA_sans_serif_regular", sans-serif;
+}
+
+.warning {
+	font-size: medium;
+	text-align: left;
+	left: 5px;
+	bottom: 0;
+}
